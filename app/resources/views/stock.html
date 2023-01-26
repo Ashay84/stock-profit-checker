@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+    <h1>STOCK PROFIT TOOL</h1>
+    <p>Upload a stock file . Then just pick a stock and date range to find most profitable time to buy and sell</p>
+</div>
+<form name="stock_upload_form" id="stock_upload_form" action="" method="POST" enctype="multipart/form-data">
+    <span id="message"></span>
+    <ul class="form-style-1">
+        <li>
+            <label>Upload stock file<span class="required">*</span></label>
+            <input type="hidden" name="hidden_field" value="1" />
+            <input type="file" name="stock_file" id="stock_file" class="field-divided" placeholder="Upload file" />
+        </li>
+
+        <li>
+            <input type="submit" name="import" id="import" class="btn btn-info" value="Upload" />
+        </li>
+
+
+</ul>
+    <div class="form-group" id="process" style="display:none;">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                <span id="process_data">0</span> - <span id="total_data">0</span>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form name="find_stock" id="find_stock">
+    <ul class="form-style-1">
+        <li><label for="stock_list">Stock list <span class="required">*</span></label>
+            <select name="stock_list" id="stock_list" required>
+                <option value="">Select stock</option>
+            </select>
+        </li>
+        <li>
+            <label for="from_date">From <span class="required">*</span></label>
+            <input type="date" name="from_date" id="from_date" required>
+        </li>
+        <li>
+            <label for="to_date">To <span class="required">*</span></label>
+            <input type="date" name="to_date" id="to_date" required>
+        </li>
+        <li>
+            <input type="submit" value="Submit" />
+        </li>
+    </ul>
+</form>
+
+
+</body>
+</html>
